@@ -1,0 +1,31 @@
+https://practice.geeksforgeeks.org/problems/form-a-triangle5935/1
+question
+
+
+//User function Template for Java
+
+class Solution {
+    
+    public static int noOfTriangles(int arr[], int n)
+    {
+        // Your code goes here
+        int c=0;
+        Arrays.sort(arr);
+        for(int i=n-1;i>=2;i--)
+        {
+          int j=0,k=i-1;
+          while(j<k)
+          {
+              if(arr[j] + arr[k] > arr[i])
+              {
+                  c=c+k-j;
+                  k--;
+              }
+              else j++;
+          }
+          
+        }
+          return c;
+        
+    }
+}
